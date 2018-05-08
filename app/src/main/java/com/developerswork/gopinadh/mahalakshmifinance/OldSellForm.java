@@ -11,9 +11,10 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CustomerForm extends Fragment{
+public class OldSellForm extends Fragment {
 
-    public CustomerForm() {
+
+    public OldSellForm() {
         // Required empty public constructor
     }
 
@@ -22,8 +23,7 @@ public class CustomerForm extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_customer_form, container, false);
-
+        return inflater.inflate(R.layout.fragment_old_sell_form, container, false);
     }
 
 }

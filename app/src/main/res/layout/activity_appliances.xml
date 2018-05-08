@@ -36,25 +36,29 @@
                 android:id="@+id/tabItem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/customer_tab" />
+                android:text="@string/customer_tab"
+                android:textSize="6sp" />
 
             <android.support.design.widget.TabItem
                 android:id="@+id/tabItem2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/article_tab" />
+                android:text="@string/article_tab"
+                android:textSize="8dp" />
 
             <android.support.design.widget.TabItem
                 android:id="@+id/tabItem3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/finance_tab" />
+                android:text="@string/finance_tab"
+                android:textSize="6sp" />
 
             <android.support.design.widget.TabItem
                 android:id="@+id/tabItem4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/transaction_tab" />
+                android:text="@string/transaction_tab"
+                android:textSize="8dp" />
 
         </android.support.design.widget.TabLayout>
     </android.support.design.widget.AppBarLayout>

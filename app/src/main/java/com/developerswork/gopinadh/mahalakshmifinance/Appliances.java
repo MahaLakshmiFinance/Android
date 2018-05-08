@@ -118,12 +118,14 @@ public class Appliances extends AppCompatActivity {
             switch(getArguments().getInt(ARG_SECTION_NUMBER)){
                 case 1:
                     // load customer
+                    rootView = inflater.inflate(R.layout.fragment_customer_form, container, false);
                     break;
                 case 2:
                     //load artices
                     break;
                 case 3:
                     //load finance
+                    rootView = inflater.inflate(R.layout.fragment_finance_form , container, false);
                     break;
                 case 4:
                     //load transaction
