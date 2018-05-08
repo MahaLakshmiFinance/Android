@@ -115,6 +115,8 @@ public class Appliances extends AppCompatActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_appliances, container, false);
+            //TextView textView = (TextView) rootView.findViewById(R.id.section_label);
+            //textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
             switch(getArguments().getInt(ARG_SECTION_NUMBER)){
                 case 1:
                     // load customer
@@ -122,6 +124,7 @@ public class Appliances extends AppCompatActivity {
                     break;
                 case 2:
                     //load artices
+                    rootView = inflater.inflate(R.layout.fragment_appliance_form, container, false);
                     break;
                 case 3:
                     //load finance
@@ -129,12 +132,9 @@ public class Appliances extends AppCompatActivity {
                     break;
                 case 4:
                     //load transaction
+                    rootView = inflater.inflate(R.layout.fragment_transaction_form, container, false);
                     break;
             }
-            /*
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
-            */
             return rootView;
         }
     }
@@ -158,7 +158,7 @@ public class Appliances extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
+            // Show 4 total pages.
             return 4;
         }
     }

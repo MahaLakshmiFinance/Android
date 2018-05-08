@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ApplianceForm">
+    tools:context=".EmployeeSalaries">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -25,71 +25,39 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="32dp"
-                android:text="Appliances "
+                android:text="Salary Details"
                 android:textSize="32sp"
                 android:textStyle="normal|bold" />
-
-            <EditText
-                android:id="@+id/editText2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Number of Items"
-                android:inputType="number" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/addr1text2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="8dp"
-                    android:text="Product Information"
-                    android:textSize="24sp"
-                    android:textStyle="normal|bold" />
-
                 <EditText
                     android:id="@+id/editText4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Name"
-                    android:inputType="textPersonName" />
+                    android:hint="Salary Paid per Month"
+                    android:inputType="number" />
 
                 <EditText
                     android:id="@+id/editText5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Type"
-                    android:inputType="textPersonName" />
-
-                <EditText
-                    android:id="@+id/editText6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="ID"
-                    android:inputType="textPersonName" />
-
-                <EditText
-                    android:id="@+id/editText9"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Warranty"
+                    android:hint="Number of Employee"
                     android:inputType="number" />
 
                 <EditText
-                    android:id="@+id/editText15"
+                    android:id="@+id/editText21"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Cost"
-                    android:inputType="number" />
+                    android:hint="Payroll Day"
+                    android:inputType="textPersonName" />
+
             </LinearLayout>
 
         </LinearLayout>
