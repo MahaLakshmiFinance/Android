@@ -20,7 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class Appliances extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class Customer extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -40,7 +40,7 @@ public class Appliances extends AppCompatActivity implements NavigationView.OnNa
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_appliances);
+        setContentView(R.layout.activity_customer);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -61,7 +61,7 @@ public class Appliances extends AppCompatActivity implements NavigationView.OnNa
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        navigationView.setCheckedItem(R.id.appliances);
+        navigationView.setCheckedItem(R.id.customer);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_open, R.string.navigation_close);
         drawer.addDrawerListener(toggle);
@@ -76,7 +76,6 @@ public class Appliances extends AppCompatActivity implements NavigationView.OnNa
             }
         });
         */
-
     }
     private DrawerLayout drawer;
 
@@ -85,11 +84,11 @@ public class Appliances extends AppCompatActivity implements NavigationView.OnNa
         Intent page = null;
         switch(item.getItemId()){
             case R.id.customer:
-                page = new Intent(this,Customer.class);
-                startActivity(page);
-                finish();
                 break;
             case R.id.appliances:
+                page = new Intent(this,Appliances.class);
+                startActivity(page);
+                finish();
                 break;
             case R.id.exchange:
                 page = new Intent(this,Exchange.class);
@@ -129,10 +128,11 @@ public class Appliances extends AppCompatActivity implements NavigationView.OnNa
             super.onBackPressed();
     }
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_appliances, menu);
+        getMenuInflater().inflate(R.menu.menu_customer, menu);
         return true;
     }
 
@@ -179,23 +179,24 @@ public class Appliances extends AppCompatActivity implements NavigationView.OnNa
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_appliances, container, false);
+            View rootView = inflater.inflate(R.layout.fragment_customer, container, false);
             //TextView textView = (TextView) rootView.findViewById(R.id.section_label);
             //textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
             switch (getArguments().getInt(ARG_SECTION_NUMBER)) {
                 case 1:
-                    //load artices
-                    rootView = inflater.inflate(R.layout.fragment_appliance_form, container, false);
+                    // load create
+                    rootView = inflater.inflate(R.layout.fragment_customer_form, container, false);
                     break;
                 case 2:
-                    //load finance
-                    rootView = inflater.inflate(R.layout.fragment_finance_form, container, false);
+                    //load edit
+                    rootView = inflater.inflate(R.layout.fragment_customer_edit, container, false);
                     break;
                 case 3:
-                    //load transaction
-                    rootView = inflater.inflate(R.layout.fragment_transaction_form, container, false);
+                    //load delte
+                    rootView = inflater.inflate(R.layout.fragment_customer_delete, container, false);
                     break;
             }
+
             return rootView;
         }
     }
@@ -219,7 +220,7 @@ public class Appliances extends AppCompatActivity implements NavigationView.OnNa
 
         @Override
         public int getCount() {
-            // Show 4 total pages.
+            // Show 3 total pages.
             return 3;
         }
     }

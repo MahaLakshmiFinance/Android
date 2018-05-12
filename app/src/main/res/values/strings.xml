@@ -38,4 +38,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
+    <string name="navigation_open">Open Navigation Panel</string>
+    <string name="navigation_close">Close Navigation Panel</string>
+    <string name="title_activity_customer">Customer</string>
+
 </resources>

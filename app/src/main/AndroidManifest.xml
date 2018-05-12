@@ -45,6 +45,10 @@
         <activity
             android:name=".Accessories"
             android:label="@string/title_activity_accessories"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Customer"
+            android:label="@string/title_activity_customer"
             android:theme="@style/AppTheme"></activity>
     </application>
 

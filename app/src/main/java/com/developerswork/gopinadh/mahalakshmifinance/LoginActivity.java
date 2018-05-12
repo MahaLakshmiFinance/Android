@@ -3,11 +3,10 @@ package com.developerswork.gopinadh.mahalakshmifinance;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
-import android.view.animation.Animation;
 import android.widget.ImageView;
 
 public class LoginActivity extends AppCompatActivity {
@@ -35,8 +34,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void verifyLogin(View view){
-        Intent verified = new Intent(this,Home.class);
+        Intent verified = new Intent(this,Customer.class);
         startActivity(verified);
-
+        finish();
     }
 }

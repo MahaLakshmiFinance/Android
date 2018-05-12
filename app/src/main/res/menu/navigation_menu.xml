@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/customer"
+            android:title="CUSTOMER" />
+        <item
+            android:id="@+id/appliances"
+            android:title="APPLIANCES" />
+        <item
+            android:id="@+id/exchange"
+            android:title="EXCHANGE MATERIALS" />
+        <item
+            android:id="@+id/cash"
+            android:title="CASH FINANCE" />
+        <item
+            android:id="@+id/employee"
+            android:title="EMPLOYEE" />
+        <item
+            android:id="@+id/accessories"
+            android:title="ACCESSORIES" />
+        <item
+            android:id="@+id/reports"
+            android:title="REPORTS" />
+        <item
+            android:id="@+id/signout"
+            android:title="SIGNOUT" />
+
+
+
+    </group>
+
+</menu>

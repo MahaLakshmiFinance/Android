@@ -1,13 +1,9 @@
 package com.developerswork.gopinadh.mahalakshmifinance;
 
-import android.annotation.SuppressLint;
-import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.MotionEvent;
-import android.view.View;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -28,6 +24,6 @@ public class SplashScreen extends Activity {
                 startActivity(animation);
                 finish();
             }
-        },1500);
+        },2500);
     }
 }
