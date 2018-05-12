@@ -1,11 +1,17 @@
 package com.developerswork.gopinadh.mahalakshmifinance;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
@@ -14,7 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class Accessories extends AppCompatActivity {
+public class Accessories extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -50,6 +56,16 @@ public class Accessories extends AppCompatActivity {
 
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
+
+        drawer = findViewById(R.id.drawer_Layout);
+
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setCheckedItem(R.id.accessories);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_open, R.string.navigation_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
         /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -63,7 +79,56 @@ public class Accessories extends AppCompatActivity {
 
     }
 
+    private DrawerLayout drawer;
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        Intent page = null;
+        switch(item.getItemId()){
+            case R.id.customer:
+                page = new Intent(this,Customer.class);
+                startActivity(page);
+                finish();
+                break;
+            case R.id.appliances:
+                page = new Intent(this,Appliances.class);
+                startActivity(page);
+                finish();
+                break;
+            case R.id.exchange:
+                page = new Intent(this,Exchange.class);
+                startActivity(page);
+                finish();
+                break;
+            case R.id.cash:
+                page = new Intent(this,Cash.class);
+                startActivity(page);
+                finish();
+                break;
+            case R.id.employee:
+                page = new Intent(this,Employee.class);
+                startActivity(page);
+                finish();
+                break;
+            case R.id.accessories:
+                break;
+            case R.id.reports:
+                page = new Intent(this,Summary.class);
+                startActivity(page);
+                finish();
+                break;
+        }
+
+        return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (drawer.isDrawerOpen(GravityCompat.START))
+            drawer.closeDrawer(GravityCompat.START);
+        else
+            super.onBackPressed();
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -119,10 +184,6 @@ public class Accessories extends AppCompatActivity {
             //textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
             switch(getArguments().getInt(ARG_SECTION_NUMBER)){
                 case 1:
-                    // load customer
-                    rootView = inflater.inflate(R.layout.fragment_customer_form, container, false);
-                    break;
-                case 2:
                     //load accessories
                     rootView = inflater.inflate(R.layout.fragment_accessories_form, container, false);
                     break;
@@ -150,8 +211,8 @@ public class Accessories extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
-            return 2;
+            // Show 1 total pages.
+            return 1;
         }
     }
 }
