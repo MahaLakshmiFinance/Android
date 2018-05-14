@@ -1,11 +1,17 @@
 package com.developerswork.gopinadh.mahalakshmifinance;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
@@ -14,7 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class Exchange extends AppCompatActivity {
+public class Exchange extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -50,6 +56,15 @@ public class Exchange extends AppCompatActivity {
 
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
+        drawer = findViewById(R.id.drawer_Layout);
+
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setCheckedItem(R.id.exchange);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_open, R.string.navigation_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
         /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +76,56 @@ public class Exchange extends AppCompatActivity {
         });
         */
 
+    }
+    private DrawerLayout drawer;
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        Intent page = null;
+        switch(item.getItemId()){
+            case R.id.customer:
+                page = new Intent(this,Customer.class);
+                startActivity(page);
+                finish();
+                break;
+            case R.id.appliances:
+                page = new Intent(this,Appliances.class);
+                startActivity(page);
+                finish();
+                break;
+            case R.id.exchange:
+                break;
+            case R.id.cash:
+                page = new Intent(this,Cash.class);
+                startActivity(page);
+                finish();
+                break;
+            case R.id.employee:
+                page = new Intent(this,Employee.class);
+                startActivity(page);
+                finish();
+                break;
+            case R.id.accessories:
+                page = new Intent(this,Accessories.class);
+                startActivity(page);
+                finish();
+                break;
+            case R.id.reports:
+                page = new Intent(this,Reports.class);
+                startActivity(page);
+                finish();
+                break;
+        }
+
+        return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (drawer.isDrawerOpen(GravityCompat.START))
+            drawer.closeDrawer(GravityCompat.START);
+        else
+            super.onBackPressed();
     }
 
 

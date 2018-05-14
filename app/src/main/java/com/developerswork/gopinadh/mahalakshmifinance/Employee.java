@@ -56,6 +56,7 @@ public class Employee extends AppCompatActivity implements NavigationView.OnNavi
 
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
+
         drawer = findViewById(R.id.drawer_Layout);
 
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -111,7 +112,7 @@ public class Employee extends AppCompatActivity implements NavigationView.OnNavi
                 finish();
                 break;
             case R.id.reports:
-                page = new Intent(this,Summary.class);
+                page = new Intent(this,Reports.class);
                 startActivity(page);
                 finish();
                 break;

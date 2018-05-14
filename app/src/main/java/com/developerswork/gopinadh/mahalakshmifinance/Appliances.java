@@ -112,7 +112,7 @@ public class Appliances extends AppCompatActivity implements NavigationView.OnNa
                 finish();
                 break;
             case R.id.reports:
-                page = new Intent(this,Summary.class);
+                page = new Intent(this,Reports.class);
                 startActivity(page);
                 finish();
                 break;

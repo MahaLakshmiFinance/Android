@@ -111,7 +111,7 @@ public class Customer extends AppCompatActivity implements NavigationView.OnNavi
                 finish();
                 break;
             case R.id.reports:
-                page = new Intent(this,Summary.class);
+                page = new Intent(this,Reports.class);
                 startActivity(page);
                 finish();
                 break;

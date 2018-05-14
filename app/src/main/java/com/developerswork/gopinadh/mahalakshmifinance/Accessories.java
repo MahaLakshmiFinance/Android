@@ -113,7 +113,7 @@ public class Accessories extends AppCompatActivity implements NavigationView.OnN
             case R.id.accessories:
                 break;
             case R.id.reports:
-                page = new Intent(this,Summary.class);
+                page = new Intent(this,Reports.class);
                 startActivity(page);
                 finish();
                 break;
