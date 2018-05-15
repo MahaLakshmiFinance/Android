@@ -61,7 +61,7 @@ public class Appliances extends AppCompatActivity implements NavigationView.OnNa
 
         drawer = findViewById(R.id.drawer_Layout);
 
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setCheckedItem(R.id.appliances);
 
@@ -81,6 +81,7 @@ public class Appliances extends AppCompatActivity implements NavigationView.OnNa
 
     }
     private DrawerLayout drawer;
+    private  NavigationView navigationView;
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -117,6 +118,26 @@ public class Appliances extends AppCompatActivity implements NavigationView.OnNa
                 page = new Intent(this,Reports.class);
                 startActivity(page);
                 finish();
+                break;case R.id.signout:
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+
+                alertDialog.setTitle("Signout");
+                alertDialog.setMessage("Are you sure to Signout?");
+                alertDialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent signout = new Intent(Appliances.this, LoginActivity.class);
+                        startActivity(signout);
+                        finish();
+                    }
+                });
+                alertDialog.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        navigationView.setCheckedItem(R.id.appliances);
+                    }
+                });
+                alertDialog.show();
                 break;
         }
 
